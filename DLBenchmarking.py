@@ -1,8 +1,8 @@
 import tensorflow as tf
 from tensorflow import keras
 import time
-import numpy as np
-import matplotlib.pyplot as plt
+
+
 
 fashion_mnist = keras.datasets.fashion_mnist
 (train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()
@@ -39,8 +39,15 @@ with tf.device('/CPU:0'):
     cpu_model = get_model()
     cpu_model.fit(train_images, train_labels_categorical, epochs=5)
     end = time.time()
-    print(f"Time taken: {(end-start)*10**3:.03f}ms")
+    time_taken = (end-start)*10**3
+    print(f"Time taken for cpu: {time_taken/6000}units")
 
 
-
+with tf.device('/GPU:0'):
+    start = time.time()
+    cpu_model = get_model()
+    cpu_model.fit(train_images, train_labels_categorical, epochs=5)
+    end = time.time()
+    time_taken = (end-start)*10**3
+    print(f"Time taken for gpu: {time_taken/6000}units")
 
