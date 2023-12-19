@@ -1,3 +1,3 @@
 # MachineLearningPractice
 these exercises are really helpful to master machine learning and deep learning...
-but a no of python packages have to be installed for each functions... example: tensorflow, keras, matplotlib, joblib, numpy, pandas, etc.
+but a no. of Python packages have to be installed for each function... example: tensorflow, keras, matplotlib, joblib, numpy, pandas, etc.
